@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Kashaf ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+            overflow-y: auto;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .screen {
+            display: none;
+        }
+
+        .screen.active {
+            display: block;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #764ba2;
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        .letter {
+            text-align: left;
+            line-height: 1.8;
+            color: #333;
+            font-size: 1.1em;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(102, 126, 234, 0.05);
+            border-radius: 10px;
+        }
+
+        .letter p {
+            margin-bottom: 15px;
+        }
+
+        .signature {
+            text-align: right;
+            font-style: italic;
+            margin-top: 30px;
+            color: #667eea;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        .question {
+            font-size: 1.5em;
+            color: #764ba2;
+            margin: 30px 0;
+            font-weight: bold;
+        }
+
+        .buttons-container {
+            position: relative;
+            height: 200px;
+            margin-top: 40px;
+        }
+
+        .choice-btn {
+            position: absolute;
+            padding: 15px 50px;
+            font-size: 1.3em;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        #yesBtn {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            left: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            box-shadow: 0 5px 15px rgba(245, 87, 108, 0.4);
+        }
+
+        #yesBtn:hover {
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 8px 20px rgba(245, 87, 108, 0.6);
+        }
+
+        #noBtn {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            color: #333;
+            right: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            box-shadow: 0 5px 15px rgba(168, 237, 234, 0.4);
+        }
+
+        #noBtn:hover {
+            background: linear-gradient(135deg, #fed6e3 0%, #a8edea 100%);
+        }
+
+        .hearts {
+            font-size: 3em;
+            margin: 20px 0;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+        }
+
+        .celebration {
+            font-size: 1.3em;
+            color: #f5576c;
+            margin: 20px 0;
+            line-height: 1.8;
+        }
+
+        .firework {
+            position: fixed;
+            font-size: 2em;
+            animation: firework 2s ease-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes firework {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(0);
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-200px) scale(1.5);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .letter {
+                font-size: 1em;
+            }
+            
+            .choice-btn {
+                padding: 12px 30px;
+                font-size: 1.1em;
+            }
+            
+            #yesBtn {
+                left: 20px;
+            }
+            
+            #noBtn {
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Screen 1: Welcome -->
+    <div class="container">
+        <div id="screen1" class="screen active">
+            <h1>Welcome ✨</h1>
+            <div class="hearts">💖</div>
+            <p style="font-size: 1.3em; color: #666; margin: 30px 0;">
+                Something special is waiting for you...
+            </p>
+            <button class="btn" onclick="showScreen(2)">Continue to Start</button>
+        </div>
+
+        <!-- Screen 2: Letter -->
+        <div id="screen2" class="screen">
+            <h2>Dear Kashaf,</h2>
+            <div class="letter">
+                <p>I've been holding something in my heart for a long time, and today I finally have the courage to say it.</p>
+                
+                <p>The truth is… I really like you. More than I ever expected.</p>
+                
+                <p>Every time I talk to you, every time I see you, something in me feels different — calmer, happier, and more complete. I don't know when it started, but slowly you became someone very special to me.</p>
+                
+                <p>I was afraid to confess because I didn't want to ruin what we have, but keeping it inside was becoming harder every day.</p>
+                
+                <p>So here it is, from my heart: I want you in my life, not just for a moment, but forever. I want to make you mine, and I want to be someone who makes you feel loved, respected, and cared for.</p>
+                
+                <p>I know this might come as a surprise, but these feelings are real, and I couldn't stay silent anymore.</p>
+                
+                <p>I'll wait for your answer, Kashaf… no matter what it is.</p>
+                
+                <div class="signature">With all my heart 💕</div>
+            </div>
+            <button class="btn" onclick="showScreen(3)">Continue</button>
+        </div>
+
+        <!-- Screen 3: Question -->
+        <div id="screen3" class="screen">
+            <div class="hearts">💝</div>
+            <div class="question">
+                Would you like to be my Valentine<br>for forever and ever?
+            </div>
+            <div class="buttons-container">
+                <button id="yesBtn" class="choice-btn" onclick="showScreen(4)">Yes! 💕</button>
+                <button id="noBtn" class="choice-btn" onclick="moveNoButton()">No</button>
+            </div>
+        </div>
+
+        <!-- Screen 4: Celebration -->
+        <div id="screen4" class="screen">
+            <div class="hearts">💖💕💗💓💝</div>
+            <h1 style="color: #f5576c;">Congratulations!</h1>
+            <div class="celebration">
+                <p><strong>I am the happiest person alive in the world! 🌟</strong></p>
+                <p style="margin-top: 20px;">Thank you for making me the luckiest person ever.</p>
+                <p>I promise to cherish every moment with you! ✨</p>
+            </div>
+            <div class="hearts" style="font-size: 4em; margin-top: 30px;">💑</div>
+        </div>
+    </div>
+
+    <script>
+        let noButtonClicks = 0;
+        const maxMoves = 5;
+
+        function showScreen(screenNumber) {
+            document.querySelectorAll('.screen').forEach(screen => {
+                screen.classList.remove('active');
+            });
+            document.getElementById('screen' + screenNumber).classList.add('active');
+            
+            if (screenNumber === 4) {
+                createFireworks();
+            }
+        }
+
+        function moveNoButton() {
+            const noBtn = document.getElementById('noBtn');
+            const container = document.querySelector('.buttons-container');
+            const containerRect = container.getBoundingClientRect();
+            
+            noButtonClicks++;
+            
+            if (noButtonClicks >= maxMoves) {
+                // After max moves, make it disappear and force Yes
+                noBtn.style.display = 'none';
+                return;
+            }
+            
+            // Generate random position
+            const maxX = containerRect.width - noBtn.offsetWidth;
+            const maxY = containerRect.height - noBtn.offsetHeight;
+            
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+            
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+            noBtn.style.transform = 'none';
+            
+            // Add a playful message
+            const messages = [
+                "No? Are you sure? 😊",
+                "Think again! 💭",
+                "Really? 🥺",
+                "One more try? 💕",
+                "Last chance to say no... 😉"
+            ];
+            
+            if (noButtonClicks <= messages.length) {
+                noBtn.textContent = messages[noButtonClicks - 1];
+            }
+        }
+
+        function createFireworks() {
+            const emojis = ['✨', '💖', '🎉', '💕', '⭐', '💝', '🌟'];
+            
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const firework = document.createElement('div');
+                    firework.className = 'firework';
+                    firework.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                    firework.style.left = Math.random() * window.innerWidth + 'px';
+                    firework.style.bottom = '0px';
+                    firework.style.animationDelay = Math.random() * 0.5 + 's';
+                    document.body.appendChild(firework);
+                    
+                    setTimeout(() => firework.remove(), 2000);
+                }, i * 200);
+            }
+        }
+    </script>
+</body>
+</html>
